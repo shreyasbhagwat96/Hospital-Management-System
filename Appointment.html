@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjivani Hospital | Management System</title>
+  <style>
+    :root {
+  --primary-color: #008080;
+  --secondary-color: #006666;
+  --light-bg: #f9f9f9;
+  --text-color: #333;
+  --border-color: #ccc;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #76bef1, #ffffff);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 30px 0;
+  text-align: center;
+}
+
+.navbar {
+  background-color: var(--secondary-color);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+  background-color: #004d4d;
+}
+
+main {
+  margin: 30px 0;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.doctor-list li {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.btn-primary {
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #006060;
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form {
+    gap: 10px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="stylesbackend.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>Sanjivani Hospital</h1>
+      <p>mutispecilty Hospital</p>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#appointments">Appointments</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="dashboard" class="card">
+      <h2>Dashboard</h2>
+      <p>Welcome to the Sanjivani Hospital mutispecilty Hospital . patients, doctors, and appointments efficiently.</p>
+    </section>
+
+    <section id="patients" class="card">
+      <h2>Patients</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Disease</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>101</td>
+              <td>vikas mali</td>
+              <td>45</td>
+              <td>Diabetes</td>
+            </tr>
+            <tr>
+              <td>102</td>
+              <td>Rita Patel</td>
+              <td>30</td>
+              <td>Asthma</td>
+            </tr>
+            <tr>
+              <td>103</td>
+              <td>Rahul Kumar</td>
+              <td>35</td>
+              <td>BP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="doctors" class="card">
+      <h2>Doctors</h2>
+      <ul class="doctor-list">
+        <li><strong>Dr. Shreyas</strong> - Cardiologist</li>
+        <li><strong>Dr. Somesh</strong> - Neurologist</li>
+        <li><strong>Dr. Siddharth</strong> - Pediatrician</li>
+      </ul>
+    </section>
+
+    <section id="appointments" class="card">
+      <h2>Book Appointment</h2>
+      <form action="appointment.php" method="POST">
+
+        <div class="form-group">
+          <label for="pname">Patient Name</label>
+          <input type="text" id="pname" name="pname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="doctor">Doctor</label>
+          <select id="doctor" name="doctor">
+            <option>Dr. Shreyas</option>
+            <option>Dr. Somesh</option>
+            <option>Dr. Siddharth</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Book Appointment</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Sanjivani Hospital. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+if(window.location.search.includes("success=1")){
+  alert("Appointment Booked Successfully!");
+}
+</script>
+</body>
+</html>

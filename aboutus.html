@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Sanjivani Hospital</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  gap: 2rem;
+}
+
+/* About Section */
+.about-section {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  margin: 40px;
+  overflow: hidden;
+}
+
+/* Text Content */
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0066cc;
+}
+
+.about-text h2 span {
+  color: #009688;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.about-text .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #009688;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.about-text .btn:hover {
+  background-color: #00796b;
+}
+
+/* Image Content */
+.about-image {
+  flex: 1 1 400px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 150, 136, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 40px 5%;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <section class="about-section">
+    <div class="container">
+      <div class="about-text">
+        <h2>Welcome to <span>Sanjivani Hospital</span></h2>
+        <p>
+          At Sanjivani Hospital, we are committed to delivering excellence in healthcare through our team of skilled professionals, advanced technologies, and compassionate approach. For over a decade, we have served the community with a focus on personalized care and patient satisfaction.
+        </p>
+        <p>
+          Our state-of-the-art facilities, 24/7 emergency services, and multidisciplinary specialties make us a trusted name in healthcare. We believe in healing with empathy, driven by innovation and integrity.
+        </p>
+        <a href="about.html" class="btn">Explore Our Services</a>
+      </div>
+      <div class="about-image">
+        <img src="img.jpg" alt="Sanjivani Hospital" />
+      </div>
+    </div>
+  </section>
+</body>
+</html>

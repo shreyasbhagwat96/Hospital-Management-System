@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanjivani Hospital Feedback</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #76bef1, #ffffff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #0b5f59;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .rating-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .rating-group label {
+      flex: 1;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    .rating-options {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5px;
+    }
+
+    .rating-options input {
+      margin-right: 5px;
+    }
+
+    .submit-btn {
+      background-color: #0b5f59;
+      color: white;
+      padding: 12px 20px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #094d47;
+    }
+
+    .recommendation {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sanjivani Hospital</h1>
+    <h2>Feedback Form</h2>
+    <form action="feedback_process.php" method="POST">
+
+    <!-- Personal Info -->
+    <label for="name">Name (Optional)</label>
+    <input type="text" id="name" name="name" />
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" min="0" max="120" />
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="">-- Select --</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="contact">Contact (Email or Phone)</label>
+    <input type="text" id="contact" name="contact" />
+
+    <!-- Ratings -->
+    <h3 style="margin-top: 30px;">Rate Our Services (1 = Poor, 5 = Excellent)</h3>
+
+    <!-- Repeat this block for each category -->
+    <div class="rating-group">
+      <label>Cleanliness</label>
+      <div class="rating-options">
+        <label><input type="radio" name="cleanliness" value="1" />1</label>
+        <label><input type="radio" name="cleanliness" value="2" />2</label>
+        <label><input type="radio" name="cleanliness" value="3" />3</label>
+        <label><input type="radio" name="cleanliness" value="4" />4</label>
+        <label><input type="radio" name="cleanliness" value="5" />5</label>
+        
+      </div>
+    </div>
+
+    <div class="rating-group">
+      <label>Staff Behavior</label>
+      <div class="rating-options">
+        <label><input type="radio" name="staff" value="1" />1</label>
+        <label><input type="radio" name="staff" value="2" />2</label>
+        <label><input type="radio" name="staff" value="3" />3</label>
+        <label><input type="radio" name="staff" value="4" />4</label>
+        <label><input type="radio" name="staff" value="5" />5</label>
+      </div>
+    </div>
+
+    <div class="rating-group">
+      <label>Doctor Consultation</label>
+      <div class="rating-options">
+        <label><input type="radio" name="doctor" value="1" />1</label>
+        <label><input type="radio" name="doctor" value="2" />2</label>
+        <label><input type="radio" name="doctor" value="3" />3</label>
+        <label><input type="radio" name="doctor" value="4" />4</label>
+        <label><input type="radio" name="doctor" value="5" />5</label>
+      </div>
+    </div>
+
+    <div class="rating-group">
+      <label>Nursing Care</label>
+      <div class="rating-options">
+        <label><input type="radio" name="nursing" value="1" />1</label>
+        <label><input type="radio" name="nursing" value="2" />2</label>
+        <label><input type="radio" name="nursing" value="3" />3</label>
+        <label><input type="radio" name="nursing" value="4" />4</label>
+        <label><input type="radio" name="nursing" value="5" />5</label>
+      </div>
+    </div>
+
+    <div class="rating-group">
+      <label>Waiting Time</label>
+      <div class="rating-options">
+        <label><input type="radio" name="waiting" value="1" />1</label>
+        <label><input type="radio" name="waiting" value="2" />2</label>
+        <label><input type="radio" name="waiting" value="3" />3</label>
+        <label><input type="radio" name="waiting" value="4" />4</label>
+        <label><input type="radio" name="waiting" value="5" />5</label>
+      </div>
+    </div>
+
+    <div class="rating-group">
+      <label>Billing & Registration</label>
+      <div class="rating-options">
+        <label><input type="radio" name="billing" value="1" />1</label>
+        <label><input type="radio" name="billing" value="2" />2</label>
+        <label><input type="radio" name="billing" value="3" />3</label>
+        <label><input type="radio" name="billing" value="4" />4</label>
+        <label><input type="radio" name="billing" value="5" />5</label>
+      </div>
+    </div>
+
+    <div class="rating-group">
+      <label>Overall Satisfaction</label>
+      <div class="rating-options">
+        <label><input type="radio" name="overall" value="1" />1</label>
+        <label><input type="radio" name="overall" value="2" />2</label>
+        <label><input type="radio" name="overall" value="3" />3</label>
+        <label><input type="radio" name="overall" value="4" />4</label>
+        <label><input type="radio" name="overall" value="5" />5</label>
+      </div>
+    </div>
+
+    <!-- Comments -->
+    <label for="comments">Your Comments / Suggestions</label>
+    <textarea id="comments" name="comments" placeholder="Write your feedback here..."></textarea>
+
+    <!-- Recommendation -->
+    <div class="recommendation">
+      <label>Would you recommend Sanjivani Hospital to others?</label>
+      <label><input type="radio" name="recommend" value="Yes" /> Yes</label>
+      <label><input type="radio" name="recommend" value="No" /> No</label>
+      <label><input type="radio" name="recommend" value="Maybe" /> Maybe</label>
+    </div>
+
+    <!-- Submit -->
+    <button class="submit-btn" type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+</body>
+</html>
