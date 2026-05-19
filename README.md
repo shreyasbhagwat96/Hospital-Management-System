@@ -26,6 +26,32 @@ A web-based Hospital Management System developed using PHP, MySQL, HTML, CSS, Ja
 4. Start Apache and MySQL
 5. Open localhost/project-folder-name
 
+## Screenshots
+
+### Home Page
+![Home](home%20page.png)
+
+### Appointment Form
+![Appointment](appointment.png)
+
+### Appointment Database
+![Appointment DB](appointment%20database.png)
+
+### Doctors Section
+![Doctors](doctors.png)
+
+### Contact Us
+![Contact](contact%20us.png)
+
+### Contact Database
+![Contact DB](contact%20us%20database.png)
+
+### Feedback Form
+![Feedback](feedback%20form.png)
+
+### Feedback Database
+![Feedback DB](feedback%20Database.png)
+
 ## Author
 Shreyas Bhagwat
 
