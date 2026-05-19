@@ -28,3 +28,17 @@ A web-based Hospital Management System developed using PHP, MySQL, HTML, CSS, Ja
 
 ## Author
 Shreyas Bhagwat
+
+## Screenshots
+
+### Home Page
+![Home](screenshots/home.png)
+
+### Appointment Page
+![Appointment](screenshots/appointment.png)
+
+### Admin Panel
+![Admin](screenshots/admin.png)
+
+### Feedback Page
+![Feedback](screenshots/feedback.png)
